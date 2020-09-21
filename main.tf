@@ -27,7 +27,7 @@ resource "aws_security_group" "internal_elb" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["var.cidr"]
+    cidr_blocks = [var.cidr]
   }
 
   egress {
