@@ -159,7 +159,7 @@ resource "aws_security_group" "internal_psql" {
 
   tags = {
     Name        = format("%s internal psql", var.name)
-    Environment = "var.environment"
+    Environment = var.environment
   }
 }
 
@@ -172,7 +172,7 @@ resource "aws_security_group" "internal_redis" {
     from_port   = 6379
     to_port     = 6379
     protocol    = "tcp"
-    cidr_blocks = ["var.cidr"]
+    cidr_blocks = [var.cidr]
   }
 
   lifecycle {
@@ -181,7 +181,7 @@ resource "aws_security_group" "internal_redis" {
 
   tags = {
     Name        = format("%s internal redis", var.name)
-    Environment = "var.environment"
+    Environment = var.environment
   }
 }
 
