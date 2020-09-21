@@ -41,9 +41,9 @@ resource "aws_security_group" "internal_elb" {
     create_before_destroy = true
   }
 
-  tags {
+  tags = {
     Name        = format("%s internal elb", var.name)
-    Environment = "var.environment"
+    Environment = var.environment
   }
 }
 
@@ -77,7 +77,7 @@ resource "aws_security_group" "external_elb" {
     create_before_destroy = true
   }
 
-  tags {
+  tags = {
     Name        = format("%s external elb", var.name)
     Environment = "var.environment"
   }
@@ -106,7 +106,7 @@ resource "aws_security_group" "internal_ssh" {
     create_before_destroy = true
   }
 
-  tags {
+  tags = {
     Name        = format("%s internal ssh", var.name)
     Environment = "var.environment"
   }
@@ -135,7 +135,7 @@ resource "aws_security_group" "external_ssh" {
     create_before_destroy = true
   }
 
-  tags {
+  tags = {
     Name        = format("%s external ssh", var.name)
     Environment = "var.environment"
   }
@@ -157,7 +157,7 @@ resource "aws_security_group" "internal_psql" {
     create_before_destroy = true
   }
 
-  tags {
+  tags = {
     Name        = format("%s internal psql", var.name)
     Environment = "var.environment"
   }
@@ -179,7 +179,7 @@ resource "aws_security_group" "internal_redis" {
     create_before_destroy = true
   }
 
-  tags {
+  tags = {
     Name        = format("%s internal redis", var.name)
     Environment = "var.environment"
   }
